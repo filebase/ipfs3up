@@ -52,12 +52,6 @@
     "afterSign": "scripts/notarize.js",
     "publish": [{
       "provider": "github"
-    },{
-      "provider": "s3",
-      "bucket": "s3-github-deployment",
-      "endpoint": "https://s3.filebase.com",
-      "acl": null,
-      "path": "/ipfs3up/"
     }]
   },
   "scripts": {
