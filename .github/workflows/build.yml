@@ -1,0 +1,39 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - main
+      - initial-draft
+
+jobs:
+  release:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Build and Release Electron app
+        uses: samuelmeuli/action-electron-builder@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          release: true
+          build_script_name: build:ui
+          mac_certs: ${{ secrets.mac_certs }}
+          mac_certs_password: ${{ secrets.mac_certs_password }}
+        env:
+          APPLEID: ${{ secrets.apple_id }}
+          APPLEIDPASS: ${{ secrets.apple_id_pass }}
+          TEAMID: ${{ secrets.team_id }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key_id }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_access_key }}
