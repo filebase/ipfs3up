@@ -11,6 +11,7 @@ export function TokenForm ({ onToken }) {
 
   const textStyle = { color: '#FFFFFF' };
   const linkTextStyle = { color: '#FFA500' };
+  const buttonStyle = { color: 'white', backgroundColor: 'rgb(255, 165, 0)' };
 
   return (
     <div className='ma4 flex-auto flex items-center'>
@@ -23,7 +24,7 @@ export function TokenForm ({ onToken }) {
           <span className='v-mid'>Credentials can be found <a href='https://console.filebase.com/keys' target='_blank' rel='noreferrer' style={linkTextStyle}>on your Access Keys page</a>.</span>
         </p>
         <div className='tc'>
-          <button type='submit' className='ph4 pv2 bg-green ba b--dark-green br1 light-green hover-white'>Continue</button>
+          <button type='submit' className='ph4 pv2 ba b--dark br1 hover-white' style={buttonStyle}>Continue</button>
         </div>
       </form>
     </div>

@@ -50,15 +50,18 @@
       "buildResources": "assets"
     },
     "afterSign": "scripts/notarize.js",
-    "publish": [{
-      "provider": "github"
-    },{
-      "provider": "s3",
-      "bucket": "s3-github-deployment",
-      "endpoint": "https://s3.filebase.com",
-      "acl": null,
-      "path": "/ipfs3up/"
-    }]
+    "publish": [
+      {
+        "provider": "github"
+      },
+      {
+        "provider": "s3",
+        "bucket": "s3-github-deployment",
+        "endpoint": "https://s3.filebase.com",
+        "acl": null,
+        "path": "/ipfs3up/"
+      }
+    ]
   },
   "scripts": {
     "start": "concurrently \"BROWSER=none npm run start:ui\" \"wait-on http://localhost:3000 && npm run start:electron\"",
@@ -71,12 +74,12 @@
     "test": "react-scripts test"
   },
   "repository": "https://github.com/filebase/ipfs3up",
-  "author": "Alan Shaw",
+  "author": "Filebase",
   "license": "Apache-2.0 OR MIT",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.100.0",
     "@aws-sdk/lib-storage": "^3.100.0",
-    "@filebase/client": "github://filebase/filebase-js#3a5159a18bfa5a5986a443b5b3ec57faf9649f5e",
+    "@filebase/client": "github:filebase/filebase-js#initial-draft-filebaseCarPkg",
     "bytes": "^3.1.2",
     "electron-is-dev": "^2.0.0",
     "electron-store": "^8.0.1",
