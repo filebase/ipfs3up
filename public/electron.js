@@ -131,7 +131,6 @@ function createWindow () {
         ;({ cid, car } = files.length === 1 && paths[0].endsWith(files[0].name)
           ? await FilebaseClient.encodeBlob(files[0])
           : await FilebaseClient.encodeDirectory(files))
-        console.log(`Original CID: ${cid}`);
       } catch (err) {
         console.error(err)
         return sendUploadProgress({ error: `packing files: ${err.message}` })
