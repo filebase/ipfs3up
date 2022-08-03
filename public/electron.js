@@ -115,7 +115,11 @@ function createWindow () {
           pathPrefix = pathToImport;
         }
 
-        for await (const file of filesFromPath(pathToImport, { pathPrefix })) {
+        for await (const file of filesFromPath(pathToImport, {
+          pathPrefix,
+          hidden: true,
+          followSymlinks: true
+        })) {
           files.push(file)
           totalBytes += file.size
           sendUploadProgress({ totalBytes, totalFiles: files.length })
