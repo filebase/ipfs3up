@@ -1,6 +1,6 @@
 {
   "name": "ipfs3up",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "private": true,
   "description": "Filebase.com IPFS S3 Uploader based on NFT UP",
   "main": "public/electron.js",
